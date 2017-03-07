@@ -1,0 +1,27 @@
+﻿[
+  {
+    "product": "A",
+    "cost": 50,
+    "offer": {
+      "quantity": 3,
+      "offercost": 130
+    }
+
+  },
+  {
+    "product": "B",
+    "cost": 30,
+    "offer": {
+      "quantity": 2,
+      "offercost": 45
+    }
+  },
+  {
+    "product": "C",
+    "cost": 20
+  },
+  {
+    "product": "D",
+    "cost": 15
+  }
+]
