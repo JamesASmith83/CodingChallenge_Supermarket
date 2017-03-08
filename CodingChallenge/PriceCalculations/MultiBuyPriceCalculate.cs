@@ -3,7 +3,7 @@ using CodingChallenge.Interfaces;
 
 namespace CodingChallenge.PriceCalculations
 {
-    public class MultiBuyPriceCalculate : PriceCalculate
+    internal class MultiBuyPriceCalculate : PriceCalculate
     {
         public override decimal Price(Dictionary<ICosting, int> multiBuyCostings)
         {

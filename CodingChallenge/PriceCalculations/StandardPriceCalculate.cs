@@ -4,7 +4,7 @@ using CodingChallenge.Interfaces;
 
 namespace CodingChallenge.PriceCalculations
 {
-    public class StandardPriceCalculate : PriceCalculate
+    internal class StandardPriceCalculate : PriceCalculate
     {
         public override decimal Price(Dictionary<ICosting, int> standardcostings)
         {

@@ -3,7 +3,7 @@ using CodingChallenge.Enumerations;
 
 namespace CodingChallenge.PriceCalculations
 {
-    public class PriceCalculateFactory
+    public abstract class PriceCalculateFactory
     {
         public static PriceCalculate GetPriceCalculation(CostingStrategy costingStrategy)
         {
