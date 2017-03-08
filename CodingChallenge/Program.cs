@@ -1,5 +1,6 @@
-﻿using CodingChallenge.Interfaces;
-using System;
+﻿using System;
+using CodingChallenge.Interfaces;
+using CodingChallenge.CostingInformation;
 
 namespace CodingChallenge
 {
@@ -8,7 +9,6 @@ namespace CodingChallenge
         public Program(ICheckout checkout)
         {
         }
-
 
         public static void Main(string[] args)
         {
@@ -24,7 +24,7 @@ namespace CodingChallenge
 
                 try
                 {
-                    var totalCost = checkout.Price_Of(items);
+                    var totalCost = checkout.GetPriceOfItems(items);
                     Console.WriteLine("Total Cost: " + totalCost);
                 }
                 catch (Exception ex)
@@ -32,6 +32,7 @@ namespace CodingChallenge
                     Console.WriteLine(ex.Message);
                 }
             }
+
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
         }

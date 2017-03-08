@@ -48,14 +48,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Checkout.cs" />
-    <Compile Include="Costing.cs" />
-    <Compile Include="CostingProvider.cs" />
+    <Compile Include="CostingInformation\Costing.cs" />
+    <Compile Include="CostingInformation\CostingProvider.cs" />
     <Compile Include="Enumerations\CostingStrategy.cs" />
     <Compile Include="Interfaces\ICheckout.cs" />
     <Compile Include="Interfaces\ICosting.cs" />
     <Compile Include="Interfaces\ICostingProvider.cs" />
     <Compile Include="Interfaces\IProcess.cs" />
-    <Compile Include="PriceCalculate.cs" />
+    <Compile Include="PriceCalculations\MultiBuyPriceCalculate.cs" />
+    <Compile Include="PriceCalculations\PriceCalculate.cs" />
+    <Compile Include="PriceCalculations\PriceCalculateFactory.cs" />
+    <Compile Include="PriceCalculations\StandardPriceCalculate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Process.cs" />

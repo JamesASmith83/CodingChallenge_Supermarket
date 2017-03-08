@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using CodingChallenge.CostingInformation;
+using System.Collections.Generic;
 
 namespace CodingChallenge.Interfaces
 {

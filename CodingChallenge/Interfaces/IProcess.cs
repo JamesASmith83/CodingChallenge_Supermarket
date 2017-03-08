@@ -4,6 +4,6 @@ namespace CodingChallenge.Interfaces
 {
     public interface IProcess
     {
-        Dictionary<char, int> Sort(string items);
+        Dictionary<char, int> GetCountsForStockItems(string items);
     }
 }

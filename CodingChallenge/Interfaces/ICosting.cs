@@ -1,4 +1,6 @@
-﻿namespace CodingChallenge.Interfaces
+﻿using CodingChallenge.CostingInformation;
+
+namespace CodingChallenge.Interfaces
 {
     public interface ICosting
     {

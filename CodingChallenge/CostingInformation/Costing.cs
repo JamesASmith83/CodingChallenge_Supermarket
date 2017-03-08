@@ -1,6 +1,6 @@
 ﻿using CodingChallenge.Interfaces;
 
-namespace CodingChallenge
+namespace CodingChallenge.CostingInformation
 {
     public class Costing : ICosting
     {

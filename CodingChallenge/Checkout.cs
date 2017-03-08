@@ -1,8 +1,10 @@
-﻿using CodingChallenge.Enumerations;
-using CodingChallenge.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CodingChallenge.Enumerations;
+using CodingChallenge.Interfaces;
+using CodingChallenge.PriceCalculations;
+using CodingChallenge.CostingInformation;
 
 namespace CodingChallenge
 {
@@ -18,7 +20,7 @@ namespace CodingChallenge
             this.costingProvider = costingProvider;
         }
 
-        public decimal Price_Of(string items)
+        public decimal GetPriceOfItems(string items)
         {
             costings = GetCostingInfo();
             var sortedItems = SortItems(items);
@@ -28,7 +30,7 @@ namespace CodingChallenge
 
         private Dictionary<char, int> SortItems(string unsortedItems)
         {
-            return process.Sort(unsortedItems);
+            return process.GetCountsForStockItems(unsortedItems);
         }
 
         private List<Costing> GetCostingInfo()
@@ -41,8 +43,8 @@ namespace CodingChallenge
             var multiBuyItems = new Dictionary<ICosting, int>();
             var standardItems = new Dictionary<ICosting, int>();
 
-            var standardPriceCalculate = PriceCalculate.GetPriceCalculation(CostingStrategy.Standard);
-            var multiBuyPriceCalculate = PriceCalculate.GetPriceCalculation(CostingStrategy.MultiBuy);
+            var standardPriceCalculate = PriceCalculateFactory.GetPriceCalculation(CostingStrategy.Standard);
+            var multiBuyPriceCalculate = PriceCalculateFactory.GetPriceCalculation(CostingStrategy.MultiBuy);
 
             foreach (var item in sortedItems)
             {
@@ -54,7 +56,14 @@ namespace CodingChallenge
                 }
                 else
                 {
-                    standardItems.Add(itemInfo, item.Value);
+                    if (itemInfo != null)
+                    {
+                        standardItems.Add(itemInfo, item.Value);
+                    }
+                    else
+                    {
+                        throw new ArgumentException("Error calculating items");
+                    }
                 }
             }
 

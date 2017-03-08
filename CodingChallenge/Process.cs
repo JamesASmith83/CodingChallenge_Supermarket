@@ -1,5 +1,5 @@
-﻿using CodingChallenge.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CodingChallenge.Interfaces;
 
 namespace CodingChallenge
 {
@@ -7,7 +7,7 @@ namespace CodingChallenge
     {
         protected Dictionary<char, int> ItemList;
 
-        public Dictionary<char, int> Sort(string items)
+        public Dictionary<char, int> GetCountsForStockItems(string items)
         {
             var codeArray = items.ToUpper().ToCharArray();
 
