@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CodingChallenge
+namespace CodingChallenge.Helpers
 {
     public static class Process
     {

@@ -4,6 +4,7 @@ using System.Linq;
 using CodingChallenge.Enumerations;
 using CodingChallenge.Interfaces;
 using CodingChallenge.CostingInformation;
+using CodingChallenge.Helpers;
 
 namespace CodingChallenge
 {
