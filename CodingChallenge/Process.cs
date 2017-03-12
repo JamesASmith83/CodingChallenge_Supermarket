@@ -1,17 +1,14 @@
 ﻿using System.Collections.Generic;
-using CodingChallenge.Interfaces;
 
 namespace CodingChallenge
 {
-    public class Process : IProcess
+    public static class Process
     {
-        protected Dictionary<char, int> ItemList;
-
-        public Dictionary<char, int> GetCountsForStockItems(string items)
+        public static Dictionary<char, int> GetCountsForStockItems(string items)
         {
             var codeArray = items.ToUpper().ToCharArray();
 
-            ItemList = new Dictionary<char, int>();
+            var ItemList = new Dictionary<char, int>();
 
             foreach (var item in codeArray)
             {

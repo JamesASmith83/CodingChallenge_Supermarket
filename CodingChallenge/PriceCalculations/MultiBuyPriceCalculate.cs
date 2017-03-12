@@ -3,9 +3,9 @@ using CodingChallenge.Interfaces;
 
 namespace CodingChallenge.PriceCalculations
 {
-    internal class MultiBuyPriceCalculate : PriceCalculate
+    internal class MultiBuyPriceCalculate : IPriceCalculate
     {
-        public override decimal Price(Dictionary<ICosting, int> multiBuyCostings)
+        public decimal Price(Dictionary<ICosting, int> multiBuyCostings)
         {
             decimal multiBuyPrice = 0;
             decimal totalMultiBuyPrice = 0;

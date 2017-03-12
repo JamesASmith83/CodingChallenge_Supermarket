@@ -1,6 +1,7 @@
 ﻿using System;
 using CodingChallenge.Interfaces;
 using CodingChallenge.CostingInformation;
+using CodingChallenge.PriceCalculations;
 
 namespace CodingChallenge
 {
@@ -18,9 +19,9 @@ namespace CodingChallenge
             {
                 var items = readLine.ToUpper().Trim();
 
-                IProcess process = new Process();
                 ICostingProvider costingProvider = new CostingProvider();
-                ICheckout checkout = new Checkout(process, costingProvider);
+                IPriceCalculateFactory priceCalculateFactory = new PriceCalculateFactory();
+                ICheckout checkout = new Checkout(costingProvider, priceCalculateFactory);
 
                 try
                 {

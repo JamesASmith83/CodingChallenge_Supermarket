@@ -1,11 +1,12 @@
 ﻿using System;
 using CodingChallenge.Enumerations;
+using CodingChallenge.Interfaces;
 
 namespace CodingChallenge.PriceCalculations
 {
-    public abstract class PriceCalculateFactory
+    public class PriceCalculateFactory : IPriceCalculateFactory
     {
-        public static PriceCalculate GetPriceCalculation(CostingStrategy costingStrategy)
+        public IPriceCalculate GetPriceCalculation(CostingStrategy costingStrategy)
         {
             switch (costingStrategy)
             {
