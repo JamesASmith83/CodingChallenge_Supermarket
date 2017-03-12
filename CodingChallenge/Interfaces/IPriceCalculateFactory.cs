@@ -1,5 +1,4 @@
 ﻿using CodingChallenge.Enumerations;
-using CodingChallenge.PriceCalculations;
 
 namespace CodingChallenge.Interfaces
 {

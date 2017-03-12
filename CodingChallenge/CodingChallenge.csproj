@@ -55,7 +55,6 @@
     <Compile Include="Interfaces\ICosting.cs" />
     <Compile Include="Interfaces\ICostingProvider.cs" />
     <Compile Include="Interfaces\IPriceCalculateFactory.cs" />
-    <Compile Include="Interfaces\IProcess.cs" />
     <Compile Include="PriceCalculations\MultiBuyPriceCalculate.cs" />
     <Compile Include="Interfaces\IPriceCalculate.cs" />
     <Compile Include="PriceCalculations\PriceCalculateFactory.cs" />
