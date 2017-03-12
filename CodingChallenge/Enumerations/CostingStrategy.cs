@@ -3,7 +3,6 @@
     public enum CostingStrategy
     {
         Standard,
-        MultiBuy,
-        PercentageReduction
+        MultiBuy        
     }
 }

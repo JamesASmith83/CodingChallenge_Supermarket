@@ -8,9 +8,9 @@ namespace CodingChallenge.CostingInformation
     public class CostingProvider : ICostingProvider
     {
         public List<Costing> GetCostingInfo()
-        {
-            // Simulates getting current costings from external source (API/DB etc...)                
-            return JsonConvert.DeserializeObject<List<Costing>>(File.ReadAllText("../../Costings.json"));
+        {           
+                // Simulates getting current costings from external source (API/DB etc...)                
+                return JsonConvert.DeserializeObject<List<Costing>>(File.ReadAllText("../../Costings.json"));
         }
     }
 }
