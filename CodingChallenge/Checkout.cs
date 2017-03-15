@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CodingChallenge.Enumerations;
 using CodingChallenge.Interfaces;
 using CodingChallenge.CostingInformation;
 using CodingChallenge.Helpers;
+using CodingChallenge.PriceCalculations;
 
 namespace CodingChallenge
 {
@@ -12,23 +12,21 @@ namespace CodingChallenge
     {
         private List<Costing> costings;
         private readonly ICostingProvider costingProvider;
-        private readonly IPriceCalculateFactory priceCalculateFactory;
         
-        public Checkout(ICostingProvider costingProvider, IPriceCalculateFactory priceCalculateFactory)
+        public Checkout(ICostingProvider costingProvider)
         {
             this.costingProvider = costingProvider;
-            this.priceCalculateFactory = priceCalculateFactory;
         }
 
         public decimal GetPriceOfItems(string items)
         {
             costings = GetCostingInfo();
-            var sortedItems = SortItems(items);
+            var sortedItems = GetCountsForStockItems(items);
             ValidateInput(costings, sortedItems);
             return Calculate(sortedItems);
         }
 
-        private Dictionary<char, int> SortItems(string unsortedItems)
+        private Dictionary<char, int> GetCountsForStockItems(string unsortedItems)
         {
             return Process.GetCountsForStockItems(unsortedItems);
         }
@@ -43,8 +41,8 @@ namespace CodingChallenge
             var multiBuyItems = new Dictionary<ICosting, int>();
             var standardItems = new Dictionary<ICosting, int>();
 
-            var standardPriceCalculate = priceCalculateFactory.GetPriceCalculation(CostingStrategy.Standard);
-            var multiBuyPriceCalculate = priceCalculateFactory.GetPriceCalculation(CostingStrategy.MultiBuy);
+            var standardPriceCalculate = PriceCalculateFactory.GetPriceCalculation("Standard");
+            var multiBuyPriceCalculate = PriceCalculateFactory.GetPriceCalculation("MultiBuy");
 
             foreach (var item in sortedItems)
             {

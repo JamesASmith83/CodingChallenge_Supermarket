@@ -3,7 +3,6 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CodingChallenge.Interfaces;
 using CodingChallenge;
 using CodingChallenge.CostingInformation;
-using CodingChallenge.PriceCalculations;
 
 namespace CodingChallengeTests
 {
@@ -16,9 +15,8 @@ namespace CodingChallengeTests
         public void Setup()
         {
            ICostingProvider costingProvider = new CostingProvider();
-           IPriceCalculateFactory priceCalculateFactory = new PriceCalculateFactory();
 
-           checkout = new Checkout(costingProvider, priceCalculateFactory);
+           checkout = new Checkout(costingProvider);
         }
 
         [TestMethod]
